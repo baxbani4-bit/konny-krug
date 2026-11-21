@@ -1,0 +1,14 @@
+<resources>
+    <color name="green_900">#1B4332</color>
+    <color name="green_700">#2D6A4F</color>
+    <color name="green_500">#40916C</color>
+    <color name="green_200">#B7E4C7</color>
+    <color name="sand_50">#FAF6EF</color>
+    <color name="sand_100">#F3EADA</color>
+    <color name="brown_600">#8B5E34</color>
+    <color name="amber_600">#E9A23B</color>
+    <color name="text_primary">#1F2A24</color>
+    <color name="text_secondary">#5C6B62</color>
+    <color name="white">#FFFFFF</color>
+    <color name="danger">#C1443B</color>
+</resources>

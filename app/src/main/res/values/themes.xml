@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.KonnyKrug" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/green_700</item>
+        <item name="colorPrimaryDark">@color/green_900</item>
+        <item name="colorAccent">@color/amber_600</item>
+        <item name="android:windowBackground">@color/sand_50</item>
+        <item name="android:statusBarColor">@color/green_900</item>
+        <item name="android:navigationBarColor">@color/sand_50</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.KonnyKrug.Dialog</item>
+    </style>
+
+    <style name="ThemeOverlay.KonnyKrug.Dialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="colorSurface">@color/white</item>
+    </style>
+</resources>

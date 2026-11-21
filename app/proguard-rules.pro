@@ -1,0 +1,1 @@
+-keep class ru.konnykrug.trainer.** { *; }

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Конный круг</string>
+    <string name="menu_add">Добавить</string>
+    <string name="menu_sync">Синхронизация</string>
+    <string name="menu_refresh">Обновить</string>
+</resources>
