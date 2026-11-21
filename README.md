@@ -1,5 +1,10 @@
 # Конный круг 🐴
 
+[![Android CI](https://github.com/baxbani4-bit/konny-krug/actions/workflows/android.yml/badge.svg)](https://github.com/baxbani4-bit/konny-krug/actions/workflows/android.yml)
+[![Последний релиз](https://img.shields.io/github/v/release/baxbani4-bit/konny-krug?label=APK)](https://github.com/baxbani4-bit/konny-krug/releases/latest)
+
+**Скачать APK:** [konny-krug-1.0.apk](https://github.com/baxbani4-bit/konny-krug/releases/latest/download/konny-krug-1.0.apk)
+
 Android-приложение для тренеров конных прогулок: календарь записи клиентов, абонементы и разовые занятия, **общее расписание на двух тренеров с синхронизацией** — каждый видит, кто и когда записан к коллеге.
 
 <p align="center">
