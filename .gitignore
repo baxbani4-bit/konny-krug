@@ -13,6 +13,7 @@ captures/
 *.jks
 key.properties
 keystore.properties
+# готовые сборки храним в репозитории — их удобно скачивать с телефона
 !dist/*.apk
 
 # IDE
