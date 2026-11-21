@@ -21,7 +21,13 @@ jobs:
       - name: Gradle
         uses: gradle/actions/setup-gradle@v3
 
-      - name: Тесты логики и интерфейса
+      - name: Запустить сервер синхронизации
+        run: |
+          cd server && DATA_FILE=/tmp/data.json PORT=8089 node server.js &
+          sleep 2
+          curl -sf http://127.0.0.1:8089/api/health
+
+      - name: Тесты логики, интерфейса и синхронизации
         run: ./gradlew testDebugUnitTest --stacktrace
 
       - name: Сборка APK

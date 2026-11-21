@@ -258,8 +258,11 @@ class MainActivity : AppCompatActivity() {
                 val activeSubs = subs.filter { it.clientId == c.id && it.left > 0 }
                 val upcoming = lessons.filter { it.clientId == c.id && it.status == Status.PLANNED && it.date >= Dates.today() }
                 val parts = mutableListOf<String>()
-                if (activeSubs.isNotEmpty()) parts.add("абонемент: ${activeSubs.sumOf { it.left }} занятий")
-                parts.add("визитов: ${lessons.count { it.clientId == c.id && it.status == Status.DONE }}")
+                if (activeSubs.isNotEmpty()) {
+                    parts.add("абонемент: " + plural(activeSubs.sumOf { it.left }, "занятие", "занятия", "занятий"))
+                }
+                val visits = lessons.count { it.clientId == c.id && it.status == Status.DONE }
+                parts.add("визитов: $visits")
                 if (upcoming.isNotEmpty()) parts.add("запланировано: ${upcoming.size}")
                 ClientRow(c, parts.joinToString(" · "))
             }

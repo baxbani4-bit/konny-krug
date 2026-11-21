@@ -19,17 +19,13 @@ Android-приложение для тренеров конных прогуло
 | 🔄 Синхронизация | Обмен с общим сервером клуба: отправка своих изменений → получение изменений коллеги. Работает и офлайн: копит изменения и досылает при связи |
 | 🛠 Офлайн-режим | Всё хранится локально, интернет нужен только для обмена с коллегой |
 
-## Скриншоты логики
+## Скриншоты
 
-```
-Расписание           Клиенты             Абонементы
-10:00  Анна Петрова   Анна Петрова        Анна Петрова      7 из 10
-       Тренер: Ирина  +7 900 111-22-33    [██████░░░░]  12 000 ₽
-       Абонемент·7    абонемент: 7 · визитов: 3
-12:00  Игорь С.       Игорь Смирнов
-       Тренер: Павел  +7 900 222-33-44
-       Разовая 2 500₽
-```
+| Расписание | Клиенты | Абонементы | Новая запись |
+|---|---|---|---|
+| <img src="docs/screenshots/1-schedule.png" width="220"> | <img src="docs/screenshots/2-clients.png" width="220"> | <img src="docs/screenshots/3-subs.png" width="220"> | <img src="docs/screenshots/4-new-lesson.png" width="220"> |
+
+В расписании видно цвет тренера и подпись «Тренер: Павел» на записи коллеги — так работает общее расписание.
 
 ## Установка приложения
 
@@ -98,7 +94,7 @@ node server.js          # нужен Node.js 18+
 # нужен JDK 17 и Android SDK 34 (или откройте проект в Android Studio Ladybug+)
 ./gradlew assembleDebug          # APK: app/build/outputs/apk/debug/app-debug.apk
 ./gradlew assembleRelease        # APK: app/build/outputs/apk/release/app-release.apk
-./gradlew testDebugUnitTest      # 12 тестов: логика данных + запуск экранов (Robolectric)
+./gradlew testDebugUnitTest      # 13 тестов: данные, запуск экранов (Robolectric) и синхронизация
 ```
 
 Release-сборка подписана debug-ключом, чтобы APK ставился на телефон без настройки keystore. Для публикации в Google Play замените `signingConfig` в `app/build.gradle.kts` на свой ключ.

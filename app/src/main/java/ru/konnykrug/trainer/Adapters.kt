@@ -105,6 +105,12 @@ class LessonAdapter(
     }
 }
 
+/** Палитра для аватарок клиентов. */
+private val AVATAR_COLORS = intArrayOf(
+    0xFF2D6A4F.toInt(), 0xFF8B5E34.toInt(), 0xFF40916C.toInt(),
+    0xFFA9743C.toInt(), 0xFF52796F.toInt(), 0xFF6B705C.toInt()
+)
+
 /** Строка списка клиентов. */
 data class ClientRow(val client: Client, val extra: String)
 
@@ -135,6 +141,7 @@ class ClientAdapter(private val onOpen: (Client) -> Unit) : RecyclerView.Adapter
         holder.name.text = c.name.ifBlank { "Без имени" }
         holder.phone.text = c.phone.ifBlank { "телефон не указан" }
         holder.avatar.text = c.name.trim().take(1).uppercase().ifBlank { "?" }
+        holder.avatar.backgroundTintList = ColorStateList.valueOf(AVATAR_COLORS[kotlin.math.abs(c.name.hashCode()) % AVATAR_COLORS.size])
         if (row.extra.isBlank()) {
             holder.extra.visibility = View.GONE
         } else {
@@ -174,7 +181,8 @@ class SubAdapter(private val onOpen: (Subscription) -> Unit) : RecyclerView.Adap
         val s = row.sub
         holder.clientName.text = row.clientName
         holder.left.text = "${s.left} из ${s.total}"
-        holder.progress.progress = if (s.total <= 0) 0 else (s.used * 100 / s.total)
+        // зелёная часть = сколько занятий осталось у клиента
+        holder.progress.progress = if (s.total <= 0) 0 else (s.left * 100 / s.total)
         holder.details.text = row.details
         holder.root.setOnClickListener { onOpen(s) }
     }
